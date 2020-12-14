@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate , StatusManagerDeleg
     
     func Errores(error: Error) {
         DispatchQueue.main.async {
-            self.paisLabel.text = "Pais erroneo o Sin casos"
+            self.paisLabel.text = "Pais Erroneo o Sin casos"
             self.poblacionLabel.text = ""
             self.continenteLabel.text = ""
             self.casosDiariosLabel.text = ""
@@ -33,8 +33,6 @@ class ViewController: UIViewController, UITextFieldDelegate , StatusManagerDeleg
         DispatchQueue.main.async {
             self.poblacionLabel.text = String(status.poblacion)
             self.continenteLabel.text = String(status.continente)
-            
-    
             self.infectadosLabel.text = String(status.casosInfectados)
             self.casosDiariosLabel.text = String(status.casosDiarios)
             self.fallecidosLabel.text = String(status.fallecidos)
@@ -49,7 +47,6 @@ class ViewController: UIViewController, UITextFieldDelegate , StatusManagerDeleg
     
     
     var StatusCovid  = statusCovid()
-
     @IBOutlet weak var buscarPaisField: UITextField!
     @IBOutlet weak var poblacionLabel: UILabel!
     @IBOutlet weak var continenteLabel: UILabel!
@@ -64,17 +61,13 @@ class ViewController: UIViewController, UITextFieldDelegate , StatusManagerDeleg
     @IBOutlet weak var criticosLabel: UILabel!
     @IBOutlet weak var pruebasLabel: UILabel!
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         StatusCovid.delegado = self
         buscarPaisField.delegate = self
-       
     }
-    
-   
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         buscarPaisField.delegate = self
@@ -89,7 +82,7 @@ class ViewController: UIViewController, UITextFieldDelegate , StatusManagerDeleg
         if buscarPaisField.text != "" {
             return true
         } else {
-            buscarPaisField.placeholder = "Escribir un pais"
+            buscarPaisField.placeholder = "Escribe un pais, por favor"
             return false
         }
     }

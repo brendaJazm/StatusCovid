@@ -21,4 +21,5 @@ struct StatusModelo {
     let activos : Int
     let criticos: Int
     let pruebas : Int
+   
 }

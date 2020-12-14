@@ -21,5 +21,6 @@ struct CovidData : Decodable , Encodable{
     let active : Int
     let critical : Int
     let tests : Int
-    
 }
+
+

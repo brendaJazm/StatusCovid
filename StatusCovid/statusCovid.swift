@@ -18,6 +18,7 @@ protocol  StatusManagerDelegate {
 struct statusCovid {
     var delegado : StatusManagerDelegate?
     
+    //API consultada
     let covidURL = "https://corona.lmao.ninja/v3/covid-19/countries/"
     
     func fetchStatus(nombrePais : String){
@@ -66,6 +67,7 @@ struct statusCovid {
             let activos = datadecodificada.active
             let criticos = datadecodificada.critical
             let pruebas = datadecodificada.tests
+           
         
         //OBJETO PERSONALIZADO DE TIPO STATUSCOVID
             let ObjStatusCovid = StatusModelo(poblacion: poblacion, continente: continente, nombrePais: nombrePais, casosInfectados: casosInfectados, casosDiarios: casosDiarios, fallecidos: fallecidos, fallecidosDiarios: fallecidosDiarios, recuperados: recuperados, recuperadosDiarios: recuperadosDiarios, activos: activos, criticos: criticos, pruebas: pruebas)
